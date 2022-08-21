@@ -146,7 +146,7 @@ const Navbar = () => {
 				}
 			>
 				<ul className="text-center">
-					<li onClick={} className="text-3xl font-bold py-4">
+					<li onClick={navHandler} className="text-3xl font-bold py-4">
 						<Link href="/">Home</Link>
 					</li>
 					<li onClick={navHandler} className="text-3xl font-bold py-4">
