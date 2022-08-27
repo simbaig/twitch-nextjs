@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Menu, Transition } from "@headlessui/react";
 import { BsPerson, BsSearch, BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { MdManageAccounts } from "react-icons/md";
+import { FiLogOut } from "react-icons/fi";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 function classNames(...classes) {
@@ -32,6 +34,7 @@ const Navbar = () => {
 							height="36"
 							alt="/"
 							className="cursor-pointer z-10"
+							onClick={navHandler}
 						/>
 					</a>
 				</Link>
@@ -168,7 +171,10 @@ const Navbar = () => {
 														"block px-4 py-2 text-sm cursor-pointer"
 													)}
 												>
-													<Link href="/account">Account</Link>
+													<div className="flex items-center">
+														<MdManageAccounts size={18} className="mr-1" />
+														<Link href="/account">Account</Link>
+													</div>
 												</p>
 											)}
 										</Menu.Item>
@@ -184,7 +190,10 @@ const Navbar = () => {
 														"block px-4 py-2 text-sm cursor-pointer"
 													)}
 												>
-													Logout
+													<div className="flex items-center">
+														<FiLogOut size={18} className="mr-1" />
+														Logout
+													</div>
 												</p>
 											)}
 										</Menu.Item>
@@ -219,16 +228,28 @@ const Navbar = () => {
 				}
 			>
 				<ul className="text-center">
-					<li onClick={navHandler} className="text-3xl font-bold py-4">
+					<li
+						onClick={navHandler}
+						className="text-3xl font-bold py-4 hover:text-[#9147ff]"
+					>
 						<Link href="/">Home</Link>
 					</li>
-					<li onClick={navHandler} className="text-3xl font-bold py-4">
-						<Link href="/">Live Chanels</Link>
+					<li
+						onClick={navHandler}
+						className="text-3xl font-bold py-4 hover:text-[#9147ff]"
+					>
+						<Link href="/#live">Live Chanels</Link>
 					</li>
-					<li onClick={navHandler} className="text-3xl font-bold py-4">
-						<Link href="/">Top Categories</Link>
+					<li
+						onClick={navHandler}
+						className="text-3xl font-bold py-4 hover:text-[#9147ff]"
+					>
+						<Link href="/#categories">Top Categories</Link>
 					</li>
-					<li onClick={navHandler} className="text-3xl font-bold py-4">
+					<li
+						onClick={navHandler}
+						className="text-3xl font-bold py-4 hover:text-[#9147ff]"
+					>
 						<Link href="/account">Account</Link>
 					</li>
 				</ul>
